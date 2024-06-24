@@ -9,6 +9,7 @@ import org.bson.types.ObjectId;
 //org.bson.types.ObjectId: This import allows you to use the ObjectId type from BSON, typically used for MongoDB document IDs.
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 //org.springframework.data.mongodb.core.mapping.Document: This import is for the @Document annotation which indicates that this class is a MongoDB document.
 import java.util.List;
 //java.util.List: This import allows you to use the List interface for collections.
@@ -42,6 +43,10 @@ public class Movie {
     private String poster;
     private List<String> genres;
     private List<String> backdrops;
+
+    @DocumentReference
+    // the db will stroe the id of the reviews and the actual reviews will be in a separate document
+    private List<Reviews> reviewIds;
 
 
 
