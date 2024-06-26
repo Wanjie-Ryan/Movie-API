@@ -33,9 +33,9 @@ public class MovieController {
     @GetMapping("/{id}")
 
 //    the data fetched will be passed as a path variable and it will be converted to an object id called id
-    public ResponseEntity<Optional <Movie>> getSingleMovie (@PathVariable ObjectId id){
+    public ResponseEntity<Optional <Movie>> getSingleMovie (@PathVariable String imbdid){
 
-        return new ResponseEntity<Optional <Movie>>(movieservice.singleMovie(id), HttpStatus.OK);
+        return new ResponseEntity<Optional <Movie>>(movieservice.singleMovie(imbdid), HttpStatus.OK);
     }
 
 }
